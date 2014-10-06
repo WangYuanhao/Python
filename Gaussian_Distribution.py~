@@ -51,10 +51,9 @@ plt.show()
 ##################################################################
 #----------------write data to txt--------------------------------
 ##################################################################
-def writingData(filename,randomVar):
-	fOpen = open(filename,'w')
-	for records in randomVar:
-		writingStr = "	".join(str(record) for record in records)
-		fOpen.write(writingStr+'\n')
-	fOpen.close()
-#####################################
+fOpen = open('outputData.txt','w')
+for records in randomVar:
+	writingStr = "	".join(str(record) for record in records)
+	fOpen.write(writingStr+'\n')
+fOpen.close()
+
