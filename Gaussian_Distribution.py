@@ -5,7 +5,7 @@ import scipy.stats as stacmp
 import matplotlib.pyplot as plt
 #######################################################################
 # -----------------generate multivariate normal samples---------------
-# #####################################################################
+#######################################################################
 def generateSample(mean,sigma):
 
 	# generate 100 samples
@@ -37,11 +37,11 @@ def generateSample(mean,sigma):
 ###################################################################
 #----------------write data to txt--------------------------------
 ##################################################################
-def writingData(filename,randomVar):
+def writingData(filename,randomVar,label):
 	fOpen = open(filename,'w')
 	for records in randomVar:
 		writingStr = "	".join(str(record) for record in records)
-		fOpen.write(writingStr+'\n')
+		fOpen.write(writingStr+'\t'+label+'\n')
 	fOpen.close()
 ###################################################################
 #----------------------read data from txt--------------------------
@@ -50,8 +50,8 @@ def readingData(filename):
 	fOpen = open(filename,'r')
 	recordsInString = fOpen.readlines()
 	rows = len(recordsInString)
-	cols = len(recordsInString[0].strip.split('\t'))
-	recordMatrix = zeros((rows,cols))
+	cols = len(recordsInString[0].strip().split('\t'))
+	recordMatrix = np.zeros((rows,cols))
 	index = 0
 	for record in recordsInString:
 		recordList = record.strip().split('\t')
@@ -71,8 +71,8 @@ sigma2 = [[1,0],[0,1]]
 randomVar1,rndX1,rndY1,rndVarProb1 = generateSample(mean1,sigma1)
 randomVar2,rndX2,rndY2,rndVarProb2 = generateSample(mean2,sigma2)
 
-writingData('outputData_1.txt',randomVar1)
-writingData('outputData_2.txt',randomVar2)
+writingData('outputData_1.txt',randomVar1,'0')
+writingData('outputData_2.txt',randomVar2,'1')
 
 
 ##################################################################
