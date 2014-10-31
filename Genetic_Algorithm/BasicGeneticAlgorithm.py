@@ -72,3 +72,5 @@ plt.plot(np.linspace(1,200,200),np.array(xmax),'r-',label='variation')
 plt.legend(loc = 8)
 
 plt.savefig('GAImage.jpg')
+print 'The best fitness=',ymax[indNumbers-1]
+print 'The best individuals=',xmax[indNumbers-1]
