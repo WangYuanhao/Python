@@ -65,7 +65,7 @@ plt.subplot(2,1,1)
 plt.plot(np.linspace(1,200,200),np.array(ymax),label="max fitness")
 plt.plot(np.linspace(1,200,200),np.array(ymean),label="mean of fitness")
 plt.title('change of fitness according to generations')
-plt.legend(loc = 9)
+plt.legend(loc = 0)
 
 plt.subplot(2,1,2)
 plt.plot(np.linspace(1,200,200),np.array(xmax),'r-',label='variation')

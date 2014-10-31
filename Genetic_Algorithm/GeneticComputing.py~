@@ -28,7 +28,7 @@ def crossover(ind,selectN,pc):
 
 
 def mutation(snew,probOfmutaion):
-	indLength = len(snew)
+	indLength = snew.shape[1]
 	_snnew = snew
 	_computingPro = probOfCompute(probOfmutaion)
 	if _computingPro == 1:
